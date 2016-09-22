@@ -21,14 +21,17 @@
   <appender name="STDERR" class="ch.qos.logback.core.ConsoleAppender">
     <target>System.err</target>
     <encoder>
-      <pattern>%-5level %date{HH:mm:ss,SSS} %msg%n</pattern>
+      <pattern>%-5level %date{"HH:mm:ss,SSS"} %msg%n</pattern>
     </encoder>
     <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
       <level>WARN</level>
     </filter>
   </appender>
 
-  <root level="WARN">
+  <root level="${logback.root.level:-WARN}">
     <appender-ref ref="STDERR" />
   </root>
+
+  <logger name="com.datastax.bdp.tools" level="INFO"/>
+  <logger name="com.datastax.driver" level="ERROR"/>
 </configuration>
