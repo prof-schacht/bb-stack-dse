@@ -1,0 +1,6 @@
+stomp_interface: {{hostvars[ansible_local.bb.hex.name + '-n1']['ansible_eth0']['ipv4']['address']}}
+use_ssl: 0
+local_interface: {{ ansible_eth0.ipv4.address }}
+hosts: ["{{ ansible_eth0.ipv4.address }}"]
+cassandra_install_location: /opt/dse
+cassandra_log_location: /logs
