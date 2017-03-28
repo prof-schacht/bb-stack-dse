@@ -57,12 +57,12 @@ hive_meta_store_enabled: true
 #                authentication fails, an authentication error is returned. If no
 #                credentials are passed, the user is logged in as anonymous
 authentication_options:
-    enabled: true
+    enabled: false
     default_scheme: keberos
     other_schemes:
       - internal
     scheme_permissions: true
-    allow_digest_with_kerberos: true
+    allow_digest_with_kerberos: false
     plain_text_without_ssl: warn
     transitional_mode: disabled
 
@@ -94,7 +94,7 @@ role_management_options:
 #                authenticated users. They are not enforced against anonymous
 #                users
 authorization_options:
-    enabled: true
+    enabled: false
     transitional_mode: disabled
 
 # Kerberos options

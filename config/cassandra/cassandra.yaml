@@ -103,9 +103,9 @@ batchlog_replay_throttle_in_kb: 1024
 # - com.datastax.bdp.cassandra.auth.DseAuthenticator For external authentication
 #   with multiple authentication schemes. Additional configuration is required in dse.yaml.
 #   If using DseAuthenticator, DseRoleManager must also be used (see below)
-#authenticator: PasswordAuthenticator
+authenticator: PasswordAuthenticator
 #authenticator: AllowAllAuthenticator
-authenticator: com.datastax.bdp.cassandra.auth.DseAuthenticator
+#authenticator: com.datastax.bdp.cassandra.auth.DseAuthenticator
 
 # Authorization backend, implementing IAuthorizer; used to limit access/provide permissions
 # Out of the box, Cassandra provides org.apache.cassandra.auth.{AllowAllAuthorizer,
@@ -118,9 +118,9 @@ authenticator: com.datastax.bdp.cassandra.auth.DseAuthenticator
 #   increase system_auth keyspace replication factor if you use this authorizer.
 # - com.datastax.bdp.cassandra.auth.DseAuthorizer for enhanced permission management of
 #   DSE specific resources. Additional configuration is required in dse.yaml
-# authorizer: CassandraAuthorizer
+authorizer: CassandraAuthorizer
 # authorizer: AllowAllAuthorizer
-authorizer: com.datastax.bdp.cassandra.auth.DseAuthorizer
+# authorizer: com.datastax.bdp.cassandra.auth.DseAuthorizer
 
 # Part of the Authentication & Authorization backend, implementing IRoleManager; used
 # to maintain grants and memberships between roles.
@@ -136,8 +136,8 @@ authorizer: com.datastax.bdp.cassandra.auth.DseAuthorizer
 # - DseRoleManager stores role options in the dse_security keyspace. Please
 #   increase the dse_security keyspace replication factor if you use this role 
 #   manager. Additional configuration is required in dse.yaml
-# role_manager: CassandraRoleManager
-role_manager: com.datastax.bdp.cassandra.auth.DseRoleManager
+role_manager: CassandraRoleManager
+# role_manager: com.datastax.bdp.cassandra.auth.DseRoleManager
 
 # Validity period for roles cache (fetching permissions can be an
 # expensive operation depending on the authorizer). Granted roles are cached for
