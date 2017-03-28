@@ -103,9 +103,9 @@ batchlog_replay_throttle_in_kb: 1024
 # - com.datastax.bdp.cassandra.auth.DseAuthenticator For external authentication
 #   with multiple authentication schemes. Additional configuration is required in dse.yaml.
 #   If using DseAuthenticator, DseRoleManager must also be used (see below)
-authenticator: PasswordAuthenticator
+#authenticator: PasswordAuthenticator
 #authenticator: AllowAllAuthenticator
-#authenticator: com.datastax.bdp.cassandra.auth.DseAuthenticator
+authenticator: com.datastax.bdp.cassandra.auth.DseAuthenticator
 
 # Authorization backend, implementing IAuthorizer; used to limit access/provide permissions
 # Out of the box, Cassandra provides org.apache.cassandra.auth.{AllowAllAuthorizer,
